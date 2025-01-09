@@ -1,0 +1,29 @@
+<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <video controls width="100%">
+            <source src="#" type="video/*">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="d-flex flex-row flex-wrap justify-content-between">
+    @foreach($userVideo as $row)
+      <div class="card bayangan" style="width: 18rem;">
+        <img class="card-img-top" style="height: 13rem;" src="" alt="Thumbnail" id="video-thumbnail" data-toggle="modal" data-target="#videoModal">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+        </div>
+        {{ asset('upload') }}/{{ $row['video'] }}
+        {{$row['judul']}}
+        {{$row['deskripsi']}}
+        @endforeach
+        </div>
+    </div>
+</div>
